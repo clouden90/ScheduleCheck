@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+src/schedulecheck/__pycache__/
+src/schedulecheck/bin/__pycache__/
+build/
+*.py[cod]
+src/schedulecheck.egg-info/
+
+# output
+schedule_check.txt
+
+# Virtualenv
+venv/*
+
+# coverage
+.coverage
