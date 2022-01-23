@@ -3,22 +3,26 @@
 [schedulecheck](https://github.com/clouden90/schedulecheck.git) is a simple python app to check schedule conflict. The major files are:
 
 # File structure
-schedulecheck/
-├── LICENSE
-├── pyproject.toml
-├── README.md
-├── setup.cfg
-├── example/
-├── reference/
-├── src/
-│   └── schedulecheck/
-│       └────────────── bin/
-│                          ├── __init__.py
-│                          ├── schedulecheck.py
-│       ├── __init__.py
-│       ├── meetinglib.py
-│       └── test_meetinglib.py
-├── .circle/
+    .
+    ├── LICENSE
+    ├── pyproject.toml
+    ├── README.md
+    ├── .gitignore
+    ├── setup.cfg
+    ├── example/
+    │   └── schedule.txt 
+    ├── reference/
+    │   ├── method1_ref.txt  
+    │   └── method2_ref.txt 
+    ├── src/                    
+    │   ├── schedulecheck/
+    │       ├── bin/
+    │           ├── __init__.py
+    │           └── schedulecheck.py 
+    │       ├── __init__.py  
+    │       ├── meetinglib.py  
+    │       └── test_meetinglib.py                
+    └── .circle/
 
 - **`example/schedule.txt`** - The example txt file contains meeting times.
 - **`reference/*_ref.txt`** - The reference answers based on example/schedule.txt.
