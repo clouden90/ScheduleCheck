@@ -54,6 +54,10 @@ cd schedulecheck
 # install
 pip install .
 
+Alternatively, you can try install with --user option. But in this case make sure to add your user bin directory to PATH environment.
+pip install --user .
+
+
 # run the driver with simple test file
 schedulecheck -h # provide some useful information about how to use the driver 
 schedulecheck -f ./example/schedule.txt -o ./schedule_check.txt -m 1
