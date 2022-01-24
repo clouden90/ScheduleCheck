@@ -1,6 +1,6 @@
 [![Build Status](https://circleci.com/gh/clouden90/schedulecheck/tree/develop.svg?style=svg)](https://circleci.com/gh/clouden90/schedulecheck/tree/develop)
 
-[schedulecheck](https://github.com/clouden90/schedulecheck.git) is a simple python app to check schedule conflict. The major files are:
+[schedulecheck](https://github.com/clouden90/schedulecheck.git) is a simple python app to check schedule conflict. Regression testing CI pipleline, and auoto-release have been implemented in this repo.
 
 # File structure
     .
