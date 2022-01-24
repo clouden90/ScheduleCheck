@@ -25,10 +25,10 @@
     └── .circle/
 
 - **`example/schedule.txt`** - The example txt file contains meeting times.
-- **`reference/*_ref.txt`** - The reference answers based on example/schedule.txt.
+- **`reference/*_ref.txt`** - The reference answers based on example/schedule.txt (mainly for regression testing).
 - **`./src/schedulecheck/bin/schedulecheck.py`** - Main driver that read input file and find conflicting schedule. 
 - **`./src/schedulecheck/meetinglib.py`** - Meetinglib library that contains algorithms of schedule-conflict check. 
-- **`./src/schedulecheck/test_meetinglib.py`** - automated tests for the conflicts_check functions in Meetinglib library.
+- **`./src/schedulecheck/test_meetinglib.py`** - automated tests(mainly for ci pipeline) for the conflicts_check functions in Meetinglib library.
 
 # Algorithms
 Two algorithms are implemented: 
@@ -44,30 +44,35 @@ Two algorithms are implemented:
   method is O(nlogn).
 
 # Installation
-Assuming you have python3 already installed, `schedulecheck` can be downloaded and installed by running
+Assuming you have python3 (>=3.6) already installed, `schedulecheck` can be downloaded and installed by running
 
 ```bash
 # download source code
 git clone https://github.com/clouden90/schedulecheck.git
 cd schedulecheck
 
-# install
+# Install
 pip install .
 
-Alternatively, you can try install with --user option. But in this case make sure to add your user bin directory to PATH environment.
-pip install --user .
+Alternatively, you can try install with --user option (e.g. pip install --user .). Make sure to add your user bin directory to PATH environment. The 
+defalut location is like: /home/YOUR_USERNAME/.local/bin/
+```
 
+# Run the driver with simple test file
+```bash
+schedulecheck -f <path/schedlue_filename> -o {path/output_filename} -m {1:method1 or 2:method2} -t {Regression testing 0:off 1:on} -v {version info}
 
-# run the driver with simple test file
 schedulecheck -h # provide some useful information about how to use the driver 
 schedulecheck -f ./example/schedule.txt -o ./schedule_check.txt -m 1
+or
+/home/YOUR_USERNAME/.local/bin/schedulecheck -f ./example/schedule.txt -o ./schedule_check.txt -m 1
 
 Then you can check the output `schedule_check.txt`, it should contain soemthing like this with method1:
 10:15-10:30 and 10:00-11:00 conflict
 11:30-11:45 and 11:00-13:00 conflict
 11:00-13:00 and 12:00-13:00 conflict
 
-or lik this with method2:
+or like this with method2:
 10:15-10:30 and 10:00-11:00 conflict
 12:00-13:00 and 11:00-13:00 conflict
 11:30-11:45 and 11:00-13:00 conflict
