@@ -73,7 +73,7 @@ def main():
         '-o', '--output', help='Output file name of schedule-conflict',
         type=str, default='./schedule_check.txt', required=False)
     parser.add_argument(
-        '-t', '--test', help='compare results to reference answers',
+        '-t', '--test', help='RT: compare results to reference answers',
         type=int, default=0, required=False)
     parser.add_argument(
         '-v', '--version', action='version', version='1.0.0')
